@@ -30,12 +30,12 @@ describe('server.js', () => {
       it('should return a status code of 500 when the invalid information is sent', async () => {
           const res = await request(server)
           .post('/api/auth/register')
-          .send({user: "test", pass: "jabroni" });
+          .send({user: "123", pass: "123" });
           expect(res.status).toBe(500);
       });
   });
   describe("login with user", ()=> {
-      it('shouls work when user is valid', async () => {
+      it('should work when user is valid', async () => {
           const res = await request(server)
           .post('/api/auth/login')
           .send(testAccount);
